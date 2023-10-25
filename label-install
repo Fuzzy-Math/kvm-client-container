@@ -26,6 +26,11 @@ done
 sed -e "s,%CONTAINER_IMAGE%,${IMAGE},g" /container/kvm-client-wrapper > ${INSTALL_PATH}/kvm-client-wrapper
 chmod 755 ${INSTALL_PATH}/kvm-client-wrapper
 
+# Install configs from virt-scenario and pvirsh
+mkdir -p /host/etc/virt-scenario
+mkdir -p /host/etc/pvirsh
+cp -ra /etc/virt-scenario/* /host/etc/virt-scenario/
+cp -ra /etc/pvirsh/* /host/etc/pvirsh/
 
 for bin in "${virt_bins[@]}"
 do

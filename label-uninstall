@@ -31,4 +31,7 @@ do
    unlink_bin ${bin}
 done
 
+rm -rf /host/etc/virt-scenario
+rm -rf /host/etc/pvirsh
+
 rm -f ${INSTALL_PATH}/kvm-client-wrapper
